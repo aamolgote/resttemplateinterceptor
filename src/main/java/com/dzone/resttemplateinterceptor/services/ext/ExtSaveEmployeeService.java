@@ -38,7 +38,7 @@ public class ExtSaveEmployeeService {
             result = responseEntity.getBody();
             long endTime = System.currentTimeMillis();
             long timeDifference = endTime - startTime;
-            logger.info("Time taken for GDS API call SOFT_PULL/performSoftPull call 1: " + timeDifference);
+            logger.info("Time taken for API call : " + timeDifference);
         } catch (HttpClientErrorException exception) {
             logger.error("HttpClientErrorException occurred while calling ext API, response string: " + exception.getResponseBodyAsString());
             throw exception;

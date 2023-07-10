@@ -81,7 +81,6 @@ public class ExternalApiLoggingInterceptor implements ClientHttpRequestIntercept
         try {
             String requestBody = new String(body, Charset.defaultCharset());
             this.saveFile(requestBody, "REQUEST");
-            //logger.info("GDS API Request Payload:" + requestBody);
         } catch (Exception ex) {
             logger.error("An error occurred while saving JSON request ExternalApiLoggingInterceptor::logRequest, detail error:", ex);
         }
@@ -91,7 +90,6 @@ public class ExternalApiLoggingInterceptor implements ClientHttpRequestIntercept
         try {
             String responseBody = StreamUtils.copyToString(response.getBody(), Charset.defaultCharset());
             this.saveFile(responseBody, "RESPONSE");
-            //logger.info("GDS API Response payload:" + responseBody);
         } catch (Exception ex) {
             logger.error("An error occurred while saving JSON response ExternalApiLoggingInterceptor::logResponse, detail error:", ex);
         }
